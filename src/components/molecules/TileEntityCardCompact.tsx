@@ -9,7 +9,7 @@ import { EntityCardCompactProps, EntryTypes } from '@/types';
 
 export default function TileEntityCardCompact({
   entity,
-}: EntityCardCompactProps<EntryTypes>) {
+}: EntityCardCompactProps) {
   const [imageHidden, setImageHidden] = useState(true);
 
   return (
