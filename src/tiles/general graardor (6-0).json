@@ -11,7 +11,7 @@
     "link": "https://www.youtube.com/watch?v=oIWnXBqebTU",
     "modified": "Added the label \"start\" to the starting tile"
   },
-  "tiles": [
+  "items": [
     {
       "regionId": 11347,
       "regionX": 60,

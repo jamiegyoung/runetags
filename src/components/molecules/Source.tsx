@@ -1,10 +1,10 @@
-import { Source } from '@/types';
+import { EntrySource } from '@/types';
 import styles from '@/components/molecules/TilesSource.module.css';
 import Modified from '@/components/atoms/Modified';
 
-export default function TilesSource({ source }: { source: Source }) {
+export default function Source({ source }: { source: EntrySource }) {
   return (
-    <div className={styles.tilesSourceParagraph}>
+    <div className={styles.sourceParagraph}>
       <a
         className={styles.link}
         href={source.link}

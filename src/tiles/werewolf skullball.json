@@ -8,7 +8,7 @@
     "name": "RuneLite's Discord - #tile-markers",
     "link": "https://runelite.net/discord"
   },
-  "tiles": [
+  "items": [
     {
       "regionId": 14234,
       "regionX": 35,

@@ -1,4 +1,4 @@
-import { ViewFormat } from '../organisms/TileEntities';
+import { ViewFormat } from '../organisms/Entities';
 import styles from '@/components/atoms/LayoutButton.module.css';
 
 export default function LayoutButton({

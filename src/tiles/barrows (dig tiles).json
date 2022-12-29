@@ -10,7 +10,7 @@
     "link": "https://runelite.net/discord",
     "modified": "Removed tiles that were not related to this activity."
   },
-  "tiles": [
+  "items": [
     {
       "regionId": 14131,
       "regionX": 54,

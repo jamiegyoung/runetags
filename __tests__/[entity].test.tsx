@@ -25,7 +25,7 @@ const TestEntity = (
     }
     tags={[`slayer`, `boss`]}
     recommendedGuideVideoId={guide ? `wnZJl9driUs` : undefined}
-    tiles={[
+    items={[
       {
         regionId: 11850,
         regionX: 25,
@@ -67,7 +67,7 @@ describe(`Entity`, () => {
     expect(getByText(`Source`)).toBeInTheDocument();
   });
 
-  it(`should generate the correct runelite tiles link`, () => {
+  it(`should generate the correct RuneLite tiles link`, () => {
     const { getByText } = render(TestEntity());
     const link = getByText(`View Map on RuneLite`);
     link.hasAttribute(`href`);

@@ -45,7 +45,7 @@ const testTiles: Tile[] = [
 // ];
 
 const testCodeBlock = (tiles: Tile[], truncateLength?: number) => (
-  <CodeBlock truncateLength={truncateLength} tiles={tiles} />
+  <CodeBlock truncateLength={truncateLength} items={tiles} />
 );
 
 describe(`CodeBlock`, () => {

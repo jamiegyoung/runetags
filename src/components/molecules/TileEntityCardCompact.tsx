@@ -5,11 +5,11 @@ import copy from 'copy-to-clipboard';
 import Link from 'next/link';
 import { event, EventNames } from '@/api/gtag';
 import { useState } from 'react';
-import { TileEntityCardCompactProps } from '@/types';
+import { EntityCardCompactProps, EntryTypes } from '@/types';
 
 export default function TileEntityCardCompact({
   entity,
-}: TileEntityCardCompactProps) {
+}: EntityCardCompactProps<EntryTypes>) {
   const [imageHidden, setImageHidden] = useState(true);
 
   return (
@@ -46,11 +46,11 @@ export default function TileEntityCardCompact({
           </Link>
         </div>
         <div className={styles.tileInteraction}>
-          <p className={styles.tileCount}>{entity.tiles.length} tile markers</p>
+          <p className={styles.tileCount}>{entity.items.length} tile markers</p>
           <Button
             className={styles.button}
             onClick={() => {
-              copy(JSON.stringify(entity.tiles));
+              copy(JSON.stringify(entity.items));
               event({
                 action: EventNames.copyTileMarkers,
                 params: {

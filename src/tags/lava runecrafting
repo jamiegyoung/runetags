@@ -1,0 +1,8 @@
+{
+  "name": "Lava Runecrafting",
+  "thumbnail": "https://oldschool.runescape.wiki/images/thumb/Lava_rune_detail.png/120px-Lava_rune_detail.png",
+  "wiki": "https://oldschool.runescape.wiki/w/Pay-to-play_Runecraft_training#Levels_23%E2%80%9399:_Lava_runes",
+  "tags": ["skilling", "runecrafting"],
+  "recommendedGuideVideoId": "0Ko4NMUEgw8",
+  "items": "banktaglayoutsplugin:lava runecrafting,5537:0,5521:1,24749:2,24755:3,26818:4,12631:38,27281:39,24747:8,11787:9,24752:10,24758:11,5521:46,7936:47,26785:16,7936:17,557:18,9781:19,7936:24,9075:25,7936:26,7936:27,13709:30,556:31,banktag:lava runecrafting,4699,27281,557,556,564,7936,9781,11787,9075,26818,5537,5521,26784,12631,24758,24755,24752,24746,24749"
+}

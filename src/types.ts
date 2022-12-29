@@ -7,36 +7,49 @@ export type Tile = {
   label?: string;
 };
 
-export type Source = {
+export type EntrySource = {
   link: string;
   name: string;
   modified?: string;
 };
 
-export type TileEntity = {
+export interface Item {
+  id: number;
+  name: string;
+  variants: Item[];
+  iconURI: string;
+}
+
+export interface LocatedItemInterface extends Item {
+  location: number;
+}
+
+export type EntryTypes = Tile | LocatedItemInterface;
+
+export interface Entry {
   safeURI: string;
   name: string;
-  subcategory?: string;
   altName?: string;
+  subcategory?: string;
   tags: string[];
-  tiles: Tile[];
   thumbnail: string;
+  items: EntryTypes[];
   wiki: string;
-  source?: Source;
+  source?: EntrySource;
   recommendedGuideVideoId?: string;
   fullName: string;
   fullAltName: string;
-};
+}
 
 export type HeightScrollTop = {
   height: number;
   scrollTop: number;
 };
 
-export interface TileEntityCardCompactProps {
-  entity: TileEntity;
+export interface EntityCardCompactProps {
+  entity: Entry;
 }
 
-export interface TileEntityCardProps extends TileEntityCardCompactProps {
+export interface EntityCardProps extends EntityCardCompactProps {
   hideInfoButton?: boolean;
 }

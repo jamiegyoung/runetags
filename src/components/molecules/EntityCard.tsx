@@ -1,6 +1,6 @@
 import Button from '@/components/atoms/Button';
 import InfoLink from '@/components/atoms/InfoLink';
-import { TileEntityCardProps } from '@/types';
+import { EntityCardProps } from '@/types';
 import Image from 'next/image';
 import styles from '@/components/molecules/TileEntityCard.module.css';
 import copy from 'copy-to-clipboard';
@@ -8,10 +8,10 @@ import Link from 'next/link';
 import { event, EventNames } from '@/api/gtag';
 import { useState } from 'react';
 
-export default function TileEntityCard({
+export default function EntityCard({
   entity,
   hideInfoButton,
-}: TileEntityCardProps) {
+}: EntityCardProps) {
   const [imageHidden, setImageHidden] = useState(true);
 
   return (
@@ -57,12 +57,12 @@ export default function TileEntityCard({
           ) : null}
         </div>
         <div>
-          <p className={styles.tileCount}>{entity.tiles.length} tile markers</p>
+          <p className={styles.tileCount}>{entity.items.length} tile markers</p>
           <div className={styles.tileInteraction}>
             <Button
               className={styles.button}
               onClick={() => {
-                copy(JSON.stringify(entity.tiles));
+                copy(JSON.stringify(entity.items));
                 event({
                   action: EventNames.copyTileMarkers,
                   params: {

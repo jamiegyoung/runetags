@@ -1,5 +1,5 @@
 import ListOperations from '@/components/molecules/ListOperations';
-import { ViewFormat } from '@/components/organisms/TileEntities';
+import { ViewFormat } from '@/components/organisms/Entities';
 import '@testing-library/jest-dom';
 import { act, render } from '@testing-library/react';
 

@@ -1,16 +1,16 @@
-import { TileEntity } from '@/types';
+import { Entry } from '@/types';
 import { NextSeo } from 'next-seo';
 import NavBar from '@/components/molecules/NavBar';
 import styles from '@/pages/[entity].module.css';
 import ListContainer from '@/components/atoms/ListContainer';
-import TileEntityCard from '@/components/molecules/TileEntityCard';
+import EntityCard from '@/components/molecules/EntityCard';
 import YoutubeEmbed from '@/components/atoms/YouTubeEmbed';
 import CodeBlock from '@/components/atoms/CodeBlock';
 import ContributionFooter from '@/components/atoms/ContributionFooter';
-import { getTileData } from '@/api/tiles';
+import { getTileData } from '@/api/entries';
 import { defaultImages } from '@/api/seoOptions';
 import ListContainerSection from '@/components/molecules/ListContainerSection';
-import TilesSource from '@/components/molecules/TilesSource';
+import Source from '@/components/molecules/Source';
 
 export async function getStaticPaths() {
   return {
@@ -35,21 +35,21 @@ export async function getStaticProps({
   };
 }
 
-export default function Entity(entity: TileEntity) {
+export default function Entity(entry: Entry) {
   return (
     <>
       <NextSeo
-        title={`${entity.name}${
-          entity.subcategory ? ` (${entity.subcategory}) ` : ` `
+        title={`${entry.name}${
+          entry.subcategory ? ` (${entry.subcategory}) ` : ` `
         }Tile Markers`}
-        description={`${entity.name}${
-          entity.altName ? ` / ${entity.altName}` : ``
+        description={`${entry.name}${
+          entry.altName ? ` / ${entry.altName}` : ``
         } tile markers for RuneLite. Find and import tile markers for different Old School RuneScape activities.`}
         openGraph={{
           images: [
             {
-              url: entity.thumbnail,
-              alt: `${entity.name} tile markers`,
+              url: entry.thumbnail,
+              alt: `${entry.name} tile markers`,
             },
             ...defaultImages,
           ],
@@ -58,11 +58,11 @@ export default function Entity(entity: TileEntity) {
       <NavBar />
       <div className={styles.container}>
         <ListContainer>
-          <TileEntityCard entity={entity} hideInfoButton />
+          <EntityCard entity={entry} hideInfoButton />
           <div className={styles.linkContainer}>
             <a
               href={`https://runelite.net/tile/show/#${Buffer.from(
-                JSON.stringify(entity.tiles),
+                JSON.stringify(entry.items),
               )
                 .toString(`base64`)
                 .replaceAll(`=`, ``)}`}
@@ -73,7 +73,7 @@ export default function Entity(entity: TileEntity) {
               View Map on RuneLite
             </a>
             <a
-              href={entity.wiki}
+              href={entry.wiki}
               className={styles.link}
               target="_blank"
               rel="noopener noreferrer"
@@ -81,21 +81,21 @@ export default function Entity(entity: TileEntity) {
               Wiki Page
             </a>
           </div>
-          {entity.recommendedGuideVideoId ? (
+          {entry.recommendedGuideVideoId ? (
             <ListContainerSection title="Recommended Guide">
               <YoutubeEmbed
-                videoId={entity.recommendedGuideVideoId}
-                title={`${entity.name} guide`}
+                videoId={entry.recommendedGuideVideoId}
+                title={`${entry.name} guide`}
               />
             </ListContainerSection>
           ) : null}
           <ListContainerSection title="Tile Data">
-            <CodeBlock tiles={entity.tiles} />
+            <CodeBlock items={entry.items} />
           </ListContainerSection>
 
-          {entity.source ? (
+          {entry.source ? (
             <ListContainerSection title="Source">
-              <TilesSource source={entity.source} />
+              <Source source={entry.source} />
             </ListContainerSection>
           ) : null}
         </ListContainer>

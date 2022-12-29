@@ -1,5 +1,6 @@
 @font-face {
   font-family: 'RuneScape UF';
+  /*noinspection CssUnknownTarget*/
   src: url('/fonts/runescape_uf.woff2');
   font-weight: normal;
   font-style: normal;

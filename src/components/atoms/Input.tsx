@@ -1,6 +1,6 @@
-import { SearchContext } from '@/pages';
 import styles from '@/components/atoms/Input.module.css';
 import { useContext, useState } from 'react';
+import { SearchContext } from '@/components/organisms/Page';
 
 export default function Input() {
   const [searching, setSearching] = useState(false);

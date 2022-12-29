@@ -1,8 +1,8 @@
 import {
   HeightScrollTop,
-  TileEntity,
-  TileEntityCardCompactProps,
-  TileEntityCardProps,
+  Entry,
+  EntityCardCompactProps,
+  EntityCardProps,
 } from '@/types';
 import styles from '@/components/organisms/TileEntities.module.css';
 import ListContainer from '@/components/atoms/ListContainer';
@@ -15,15 +15,15 @@ import {
   useRef,
   useState,
 } from 'react';
-import { SearchContext } from '@/pages';
 import GridContainer from '../atoms/GridContainer';
 import ListOperations from '../molecules/ListOperations';
 import useWindowDimensions from '@/hooks/useWindowDimensions';
-import TileEntityCard from '../molecules/TileEntityCard';
+import EntityCard from '../molecules/EntityCard';
 import TileEntityCardCompact from '../molecules/TileEntityCardCompact';
+import { SearchContext } from '@/components/organisms/Page';
 
-type TileEntitiesProps = {
-  list: TileEntity[];
+type EntitiesProps = {
+  list: Entry[];
 };
 
 export enum ViewFormat {
@@ -31,7 +31,7 @@ export enum ViewFormat {
   Grid,
 }
 
-export default function TileEntities({ list }: TileEntitiesProps) {
+export default function Entities({ list }: EntitiesProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [searchVal] = useContext(SearchContext);
   const [viewFormat, _setViewFormat] = useState<ViewFormat | undefined>(
@@ -96,9 +96,7 @@ export default function TileEntities({ list }: TileEntitiesProps) {
       children: ReactNode;
       customRef?: RefObject<HTMLDivElement> | undefined;
     }) => JSX.Element,
-    Card: ({
-      entity,
-    }: TileEntityCardProps | TileEntityCardCompactProps) => JSX.Element,
+    Card: ({ entity }: EntityCardProps | EntityCardCompactProps) => JSX.Element,
   ) {
     return (
       <Container customRef={ref}>
@@ -133,7 +131,7 @@ export default function TileEntities({ list }: TileEntitiesProps) {
         <ListOperations viewFormat={viewFormat} setViewFormat={setViewFormat} />
       ) : null}
       {viewFormat === ViewFormat.List
-        ? entityContainer(ListContainer, TileEntityCard)
+        ? entityContainer(ListContainer, EntityCard)
         : null}
       {viewFormat === ViewFormat.Grid
         ? entityContainer(GridContainer, TileEntityCardCompact)

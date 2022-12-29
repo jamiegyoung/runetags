@@ -1,4 +1,4 @@
-import { Tile } from '@/types';
+import { EntryTypes } from '@/types';
 import { CSSProperties, useCallback, useEffect, useState } from 'react';
 import styles from './CodeBlock.module.css';
 
@@ -10,10 +10,10 @@ const getPosition = (string: string, subString: string, index: number) => {
 };
 
 export default function CodeBlock({
-  tiles,
+  items,
   truncateLength,
 }: {
-  tiles: Tile[];
+  items: EntryTypes[];
   truncateLength?: number;
 }) {
   const [pretty, setPretty] = useState<boolean>(false);
@@ -29,9 +29,9 @@ export default function CodeBlock({
   const getText = useCallback(
     () =>
       pretty
-        ? JSON.stringify(tiles, null, `\t`).toString()
-        : JSON.stringify(tiles).toString(),
-    [tiles, pretty],
+        ? JSON.stringify(items, null, `\t`).toString()
+        : JSON.stringify(items).toString(),
+    [items, pretty],
   );
 
   const [text, setText] = useState<string>(getText());

@@ -1,6 +1,6 @@
 import Search from './Search';
 import styles from '@/components/molecules/ListOperations.module.css';
-import { ViewFormat } from '../organisms/TileEntities';
+import { ViewFormat } from '../organisms/Entities';
 import LayoutButton from '../atoms/LayoutButton';
 
 export default function ListOperations({

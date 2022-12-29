@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import { getTileData } from '@/api/tiles';
+import { getTileData } from '@/api/entries';
 
 describe(`Tiles`, () => {
   it(`should be in the correct order`, () => {

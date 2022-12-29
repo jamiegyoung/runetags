@@ -7,7 +7,7 @@
     "name": "WDR Discord - #bot-commands !tobtiles",
     "link": "https://discord.gg/wdr"
   },
-  "tiles": [
+  "items": [
     {
       "regionId": 12613,
       "regionX": 34,

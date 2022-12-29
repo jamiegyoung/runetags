@@ -1,3 +1,5 @@
+// noinspection SpellCheckingInspection
+
 import styles from '@/components/atoms/YouTubeEmbed.module.css';
 import React from 'react';
 import LiteYoutubeEmbed from 'react-lite-youtube-embed';

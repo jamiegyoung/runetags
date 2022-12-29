@@ -1,8 +1,8 @@
-import { SearchContext } from '@/pages';
 import '@testing-library/jest-dom';
 import { act, fireEvent, render } from '@testing-library/react';
 import { Dispatch, SetStateAction } from 'react';
 import Input from '@/components/atoms/Input';
+import { SearchContext } from '@/components/organisms/Page';
 
 const testInputWithContext = (
   searchVal: string | undefined,
@@ -27,6 +27,7 @@ describe(`Input`, () => {
 
   const mockSetSearchVal = jest.fn();
 
+  // noinspection JSUnusedGlobalSymbols
   jest.mock(`react`, () => ({
     useState: (initial: string) => [initial, mockSetSearchVal],
   }));

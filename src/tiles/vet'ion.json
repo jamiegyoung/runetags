@@ -8,7 +8,7 @@
     "name": "QuickOSRS - Vet'ion Quick Safespot Guide",
     "link": "https://www.youtube.com/watch?v=LbECShDzmrM"
   },
-  "tiles": [
+  "items": [
     {"regionId":12602,"regionX":61,"regionY":53,"z":0,"color":"#FFFFF100","label":"Lure2"},
     {"regionId":12858,"regionX":3,"regionY":52,"z":0,"color":"#FFFFFF00"},
     {"regionId":12858,"regionX":5,"regionY":52,"z":0,"color":"#FFFFFF00"},

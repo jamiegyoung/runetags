@@ -9,6 +9,7 @@ type GtagFn = (
 ) => void;
 
 declare global {
+  // noinspection JSUnusedGlobalSymbols
   interface Window {
     gtag: undefined | GtagFn;
   }

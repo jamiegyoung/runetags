@@ -8,7 +8,7 @@
     "link": "https://runelite.net/discord"
   },
   "tags": ["boss"],
-  "tiles": [
+  "items": [
     {
       "regionId": 9023,
       "regionX": 30,

@@ -1,9 +1,9 @@
 import '@testing-library/jest-dom';
 import { act, fireEvent, render } from '@testing-library/react';
-import { TileEntity } from '@/types';
+import { Entry } from '@/types';
 import TileEntityCardCompact from '@/components/molecules/TileEntityCardCompact';
 
-const entity: TileEntity = {
+const entity: Entry = {
   name: `Abyssal Sire`,
   safeURI: `AbyssalSire`,
   thumbnail: `https://oldschool.runescape.wiki/images/thumb/Abyssal_Sire.png/200px-Abyssal_Sire.png`,
@@ -14,7 +14,7 @@ const entity: TileEntity = {
     name: `AsukaYen OSRS - OSRS Abyssal Sire Guide [2021]`,
     link: `https://www.youtube.com/watch?v=wnZJl9driUs`,
   },
-  tiles: [
+  items: [
     {
       regionId: 11850,
       regionX: 25,

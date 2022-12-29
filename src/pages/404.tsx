@@ -1,3 +1,5 @@
+// noinspection HtmlUnknownTarget
+
 import NavBar from '@/components/molecules/NavBar';
 import styles from '@/styles/404.module.css';
 import { NextSeo } from 'next-seo';

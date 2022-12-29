@@ -1,9 +1,9 @@
 import '@testing-library/jest-dom';
 import { act, render } from '@testing-library/react';
-import { TileEntity } from '@/types';
-import TileEntities, { ViewFormat } from '@/components/organisms/TileEntities';
+import { Entry } from '@/types';
+import Entities, { ViewFormat } from '@/components/organisms/Entities';
 
-const testTileData: TileEntity[] = [
+const testTileData: Entry[] = [
   {
     name: `Abyssal Sire`,
     safeURI: `AbyssalSire`,
@@ -15,7 +15,7 @@ const testTileData: TileEntity[] = [
       name: `AsukaYen OSRS - OSRS Abyssal Sire Guide [2021]`,
       link: `https://www.youtube.com/watch?v=wnZJl9driUs`,
     },
-    tiles: [
+    items: [
       {
         regionId: 11850,
         regionX: 25,
@@ -38,7 +38,7 @@ const testTileData: TileEntity[] = [
       name: `AsukaYen OSRS - OSRS Abyssal Sire Guide [2021]`,
       link: `https://www.youtube.com/watch?v=wnZJl9driUs`,
     },
-    tiles: [
+    items: [
       {
         regionId: 5536,
         regionX: 27,
@@ -65,7 +65,7 @@ describe(`TileEntites`, () => {
   });
 
   it(`should map entities correctly`, () => {
-    const { getByText } = render(<TileEntities list={testTileData} />);
+    const { getByText } = render(<Entities list={testTileData} />);
     expect(getByText(`Abyssal Sire`)).toBeInTheDocument();
     expect(getByText(`Alchemical Hydra`)).toBeInTheDocument();
     expect(getByText(`1 tile markers`)).toBeInTheDocument();
@@ -73,12 +73,12 @@ describe(`TileEntites`, () => {
   });
 
   it(`should display a message if no entities are found`, () => {
-    const { getByText } = render(<TileEntities list={[]} />);
+    const { getByText } = render(<Entities list={[]} />);
     expect(getByText(`No results found`)).toBeInTheDocument();
   });
 
   it(`should be able to switch between list and grid view`, () => {
-    const { container } = render(<TileEntities list={testTileData} />);
+    const { container } = render(<Entities list={testTileData} />);
     const listContainer = container.querySelector(`.innerListContainer`);
 
     expect(listContainer).toBeInTheDocument();
@@ -97,7 +97,7 @@ describe(`TileEntites`, () => {
   });
 
   it(`should set the view to a list by default`, () => {
-    const { container } = render(<TileEntities list={testTileData} />);
+    const { container } = render(<Entities list={testTileData} />);
     // wait for the list to render
     const listContainer = container.querySelector(`.innerListContainer`);
     expect(listContainer).toBeInTheDocument();
@@ -105,7 +105,7 @@ describe(`TileEntites`, () => {
   });
 
   it(`should set the view to a list if the window is smaller than 600px`, () => {
-    const { container } = render(<TileEntities list={testTileData} />);
+    const { container } = render(<Entities list={testTileData} />);
     const button = container.querySelector(`.button`) as HTMLButtonElement;
     if (!button) {
       throw new Error(`No button found`);
@@ -140,7 +140,7 @@ describe(`TileEntites`, () => {
     jest.spyOn(Storage.prototype, `setItem`);
     Storage.prototype.setItem = jest.fn();
 
-    const { container } = render(<TileEntities list={testTileData} />);
+    const { container } = render(<Entities list={testTileData} />);
     const gridButton = container.querySelector(`.button`) as HTMLButtonElement;
     if (!gridButton) {
       throw new Error(`No button found`);
@@ -161,7 +161,7 @@ describe(`TileEntites`, () => {
     jest.spyOn(Storage.prototype, `getItem`);
     Storage.prototype.getItem = jest.fn();
 
-    render(<TileEntities list={testTileData} />);
+    render(<Entities list={testTileData} />);
     expect(localStorage.getItem).toBeCalledWith(`viewFormat`);
   });
 });

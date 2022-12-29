@@ -1,13 +1,13 @@
 import { Entry } from '@/types';
-import { getTileData } from '@/api/entries';
+import { getTagData, getTileData } from '@/api/entries';
 import Page from '@/components/organisms/Page';
 
 export function getStaticProps() {
   return {
-    props: { data: getTileData() },
+    props: { data: getTagData() },
   };
 }
 
-export default function Home({ data }: { data: Entry[] }) {
+export default function TagsHome({ data }: { data: Entry[] }) {
   return <Page data={data} />;
 }

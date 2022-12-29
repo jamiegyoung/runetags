@@ -10,7 +10,7 @@ const nextSeoOptions: NextSeoProps = {
     url: `https://runemarkers.net`,
     title: `RuneMarkers - A Collection of RuneLite Tile Markers`,
     description: `A collection of tile markers for RuneLite. Find and import tile markers for different Oldschool RuneScape activities.`,
-    site_name: `RuneMarkers`,
+    siteName: `RuneMarkers`,
   },
   twitter: {
     handle: `@jamgyo`,
