@@ -1,5 +1,6 @@
-<!--suppress ALL -->
-kground.png" height="256">
+<p align="center">
+  <a href="https://runemarkers.net">
+    <img src="./public/logo-256-background.png" height="256">
   </a>
   <h1 align="center">RuneMarkers</h1>
 </p>
