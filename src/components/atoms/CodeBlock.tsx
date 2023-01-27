@@ -1,4 +1,4 @@
-import { EntryTypes } from '@/types';
+import { EntryItem } from '@/types';
 import { CSSProperties, useCallback, useEffect, useState } from 'react';
 import styles from './CodeBlock.module.css';
 
@@ -13,7 +13,7 @@ export default function CodeBlock({
   items,
   truncateLength,
 }: {
-  items: EntryTypes[];
+  items: EntryItem[];
   truncateLength?: number;
 }) {
   const [pretty, setPretty] = useState<boolean>(false);

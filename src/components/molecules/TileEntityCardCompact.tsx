@@ -5,7 +5,7 @@ import copy from 'copy-to-clipboard';
 import Link from 'next/link';
 import { event, EventNames } from '@/api/gtag';
 import { useState } from 'react';
-import { EntityCardCompactProps, EntryTypes } from '@/types';
+import { EntityCardCompactProps, EntryItem } from '@/types';
 
 export default function TileEntityCardCompact({
   entity,

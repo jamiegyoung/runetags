@@ -24,7 +24,7 @@ export interface LocatedItemInterface extends Item {
   location: number;
 }
 
-export type EntryTypes = Tile | LocatedItemInterface;
+export type EntryItem = Tile | LocatedItemInterface;
 
 export interface Entry {
   safeURI: string;
@@ -33,7 +33,7 @@ export interface Entry {
   subcategory?: string;
   tags: string[];
   thumbnail: string;
-  items: EntryTypes[];
+  items: EntryItem[];
   wiki: string;
   source?: EntrySource;
   recommendedGuideVideoId?: string;

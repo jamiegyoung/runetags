@@ -1,6 +1,6 @@
 import { Entry } from '@/types';
 import fs from 'fs';
-import LocatedItem from '@/api/locatedItem';
+// import LocatedItem from '@/api/locatedItem';
 
 export const getTileData: () => Entry[] = () =>
   fs
@@ -21,24 +21,31 @@ export const getTileData: () => Entry[] = () =>
       fullAltName: `${tile.altName} ${tile.subcategory}`,
     }));
 
-export const getTagData: () => LocatedItem[] = () =>
-  fs
-    .readdirSync(`./src/tags`, {
-      encoding: `utf-8`,
-      withFileTypes: true,
-    })
-    .filter((file) => file.isFile() && file.name.endsWith(`.json`))
-    .map((file) => ({
-      safeURI: file.name.replace(`.json`, ``),
-      ...JSON.parse(
-        fs.readFileSync(`./src/tags/${file.name}`, { encoding: `utf-8` }),
-      ),
-    }))
-    .map(
-      (tag) =>
-        new LocatedItem({
-          ...tag,
-          fullName: `${tag.name} ${tag.subcategory}`,
-          fullAltName: `${tag.altName} ${tag.subcategory}`,
-        }),
-    );
+// const parseItemString = (itemString: string): LocatedItem[] =>
+//   itemString.split(`,`).map((item) => {
+//     const [id, location] = item.split(`:`);
+//     return new LocatedItem({
+//       id: Number(id),
+//       location: Number(location),
+//     });
+//   });
+
+// export const getTagData: () => Entry[] = () =>
+//   fs
+//     .readdirSync(`./src/tags`, {
+//       encoding: `utf-8`,
+//       withFileTypes: true,
+//     })
+//     .filter((file) => file.isFile() && file.name.endsWith(`.json`))
+//     .map((file) => ({
+//       safeURI: file.name.replace(`.json`, ``),
+//       ...JSON.parse(
+//         fs.readFileSync(`./src/tags/${file.name}`, { encoding: `utf-8` }),
+//       ),
+//     }))
+//     .map((tag) => ({
+//       ...tag,
+//       items: parseItemString(tag.items) as LocatedItem[],
+//       fullName: `${tag.name} ${tag.subcategory}`,
+//       fullAltName: `${tag.altName} ${tag.subcategory}`,
+//     }));

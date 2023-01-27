@@ -1,4 +1,4 @@
 #!/bin/sh
 chmod ug+x .husky/*
 
-yarn commitlint --edit $1
+yarn commitlint --config commitlint.config.cjs --edit $1

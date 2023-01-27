@@ -31,6 +31,15 @@ exports[`Home should search correctly 1`] = `
             </span>
           </header>
         </a>
+        <a
+          class="navbarLink"
+          href="/tags"
+        >
+          Rune
+          <span>
+            Tags
+          </span>
+        </a>
       </div>
       <div
         class="container"

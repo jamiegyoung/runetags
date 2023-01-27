@@ -6,7 +6,9 @@ export default function NavBar() {
   return (
     <div className={styles.navbar}>
       <Title />
-      <Link href={`/tags`}>Bank Layouts</Link>
+      <Link href={`/tags`} className={styles.navbarLink}>
+        Rune<span>Tags</span>
+      </Link>
     </div>
   );
 }

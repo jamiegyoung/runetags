@@ -1,4 +1,4 @@
-module.exports = {
+const config = {
   reactStrictMode: true,
   images: {
     domains: ['oldschool.runescape.wiki'],
@@ -6,3 +6,5 @@ module.exports = {
   swcMinify: true,
   output: 'standalone',
 };
+
+export default config;
