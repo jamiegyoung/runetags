@@ -5,8 +5,9 @@
   "recommendedGuideVideoId": "HnUr5zcF4fU",
   "tags": ["zuk", "tzkal"],
   "source": {
-    "name": "WDR Discord - #bot-commands !infernotiles",
-    "link": "https://discord.gg/wdr"
+    "name": "WeDoRaids Discord - #bot-commands !infernotiles",
+    "link": "https://discord.gg/wdr",
+    "modified": "Unsafe tile label added courtesy of Brew Time"
   },
   "items": [
     {
@@ -61,9 +62,10 @@
     {
       "regionId": 9043,
       "regionX": 31,
-      "regionY": 46,
+      "regionY": 45,
       "z": 0,
-      "color": "#FFDF3C3C"
+      "color": "#FFDF3C3C",
+      "label": "UNSAFE"
     },
     {
       "regionId": 9043,
