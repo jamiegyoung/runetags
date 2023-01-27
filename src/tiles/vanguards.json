@@ -8,7 +8,7 @@
     "name": "WeDoRaids Discord",
     "link": "https://discord.gg/wdr"
   },
-  "tiles": [
+  "items": [
     {
       "regionId": 13139,
       "regionX": 52,
